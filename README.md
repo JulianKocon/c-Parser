@@ -1,62 +1,41 @@
 # C++ Parser
-## Opis
+## Description
+A tool designed for performing various operations on the contents of text files saved in ANSI format.
 
-Narzędzie służące do wykonywania przeróżnych operacji na zawartościach plików tekstowych zapisanych w formacie ANSI.
-
-
-### Uruchamianie programu
-
-* Aplikacja uruchamiana z poziomu linii poleceń bazując na przekazanych flagach, produkuje odpowiedni tekst zawierający zgodne z wymaganiami informacje.
-Przykładowo:
+## Running the Program
+The application is run from the command line, and based on the provided flags, it produces the appropriate text containing the required information.
+For example:
 ```
 -f input.txt -n -c -o output.txt -l -s -dd -d -c -w -p ala ma kota
 ```
-### Opis flag
+### Description of Flags
+-f expects the next argument to be the path to the source file.
 
-Flaga -f oczekuje, że następnym argumentem będzie ścieżka do **pliku źródłowego**.
+-n displays the number of lines in the source file.
 
-Flaga -n wyświetla liczbę linii z pliku źródłowego.
+-d displays the number of digits in the source file. A digit does not need to be a separate word (i.e., separated by whitespace or the beginning/end of the file).
 
-Flaga -d wyświetla liczbę cyfr z pliku źródłowego. Cyfra nie musi być osobnym słowem
-(czyli oddzielona białymi znakami lub początkiem / końcem pliku).
+-dd displays the number of numbers in the source file.
 
-Flaga -dd wyświetla liczbę liczb z pliku źródłowego.
+-c displays the number of characters in the source file.
 
+-w displays the number of words in the source file. A word is any sequence of non-whitespace characters. Numbers are also considered words.
 
-Flaga -c wyświetla liczbę znaków z pliku źródłowego.
+-s displays all the words from the input file in alphabetical order.
 
-Flaga -w wyświetla liczbę słów z pliku źródłowego. Słowo to dowolny ciąg niebiałych
-znaków. Liczby również traktowane są jako słowo.
+-rs displays all the words from the input file in reverse alphabetical order.
 
-Flaga -s wyświetla wszystkie słowa z pliku wejściowego w kolejności alfabetycznej.
+-l modifies the operation of the following -s or -rs flag to sort by the length of the words rather than alphabetical order.
 
-Flaga -rs wyświetla wszystkie słowa z pliku wejściowego w kolejności odwrotnej od
-alfabetycznej.
+-a should be the last specified flag, followed by an undefined number of words. The program with this flag displays all words from the source file that are anagrams of the words provided after this flag. The displayed words do not repeat.
 
-Flaga -l modyfikuje działanie następującej po niej fladze -s lub -rs tak, aby
-zamiast brać pod uwagę kolejność alfabetyczną, flagi te biorą pod uwagę kolejność
-precyzowaną przez długość poszczególnych słów.
+-p should be the last specified flag, followed by an undefined number of words. The program with this flag displays all the words provided after the flag that are palindromes and appear in the source file. The displayed words do not repeat.
 
-Flaga -a powinna być ostatnią sprecyzowaną flagą, po której nastąpi nieokreślona liczba słów. Program z tak podaną flagą wyświetla wszystkie słowa z pliku
- źródłowego, które są anagramami słów podanych tuż po tej fladze. Tak wyświetlane
- słowa nie powtarzają się.
+-o expects the next argument to be a path to a file. Modifies the program’s behavior so that instead of displaying the output on the console, the output is written to the specified file.
 
-Flaga -p powinna być ostatnią sprecyzowaną flagą, po której nastąpi nieokreślona liczba słów. Program z tak podaną flagą wyświetla wszystkie podane po fladze
-słowa, które są palindromami oraz występują w pliku źródłowym. Tak
- wyświetlane słowa nie powtarzają się.
+-i expects the next argument to be a path to an input file. Modifies the program’s behavior so that instead of specifying the rest of the flags as arguments, the application takes the flags and related data from the mentioned input file. This flag should be the only one provided when running the application (the rest of the flags are found in the input file).
 
-Flaga -o, po której oczekuje się ścieżki do pliku, modyfikuje działanie programu w
- taki sposób, że zamiast wyświetlać informacje na konsoli, w której uruchamiana jest
- aplikacja, efekt działania programu w postaci tekstu zostaje zapisany do pliku o
- sprecyzowanej ścieżce.
-
-Flaga -i, po której oczekuje się ścieżki do pliku wejściowego, modyfikuje
-    działanie programu w taki sposób, że zamiast precyzować resztę flag jako argumenty
-    wywołania, aplikacja pobiera flagi i dane ich dotyczące z wymienionego wcześniej
-    pliku wejściowego. Flaga ta powinna być jedyną podaną podczas uruchamiania aplikacji
-    (reszta flag znajduje się w pliku wejściowym).
-## Autor
-
+## Author
 Julian Kocon
 
-### Data utworzenia: czerwiec 2021
+### Creation Date: June 2021
